@@ -1,38 +1,44 @@
-# Audio Downloader
+# 🎵 Yt 2 Mp3 – v1.0  
+*YouTube to MP3/M4A Converter for Windows*
 
-A professional Windows desktop application for downloading and managing audio content from YouTube with automatic metadata tagging.
+A fast, lightweight, and user-friendly desktop application that converts YouTube videos to high-quality audio files with embedded album art, tag editing, and smart playlist handling.
 
-## Features
+> ⚠️ **Note**: This tool is for personal use only. Respect copyright and YouTube’s Terms of Service.
+
+---
+
+## ✨ Features
 
 ### Core Functionality
-- ✅ Download single videos or entire playlists
-- ✅ Automatic audio extraction (MP3 or M4A)
-- ✅ Smart metadata extraction from video titles
-- ✅ Interactive tag editor after each download
-- ✅ Automatic file renaming based on metadata
-- ✅ Downloaded files tracking table
+- ✅ Download single videos or entire playlists  
+- ✅ Automatic audio extraction (**MP3** or **M4A**)  
+- ✅ Smart metadata extraction from video titles  
+- ✅ Interactive tag editor after each download  
+- ✅ Automatic file renaming based on metadata  
+- ✅ Embedded album art (cover stored inside audio file)  
+- ✅ Downloaded files tracking table  
 
 ### User Experience
-- 🎨 Modern, clean PySide6 interface
-- 📊 Real-time download progress tracking
-- 📋 Playlist progress indicator
-- 🏷️ Immediate tag editing after download
-- 📁 Direct save to Windows Music folder
-- 💰 Integrated advertisement space
+- 🎨 Modern, clean PySide6 interface  
+- 📊 Real-time track and playlist progress  
+- 🏷️ Immediate tag editing after download  
+- 📁 Direct save to `C:\Users\<You>\Music`  
+- ❌ No external `.jpg` files — cover art is **inside** the audio file  
 
 ### Technical Excellence
-- 🧵 Non-blocking threaded downloads
-- 🛡️ Robust error handling
-- 📝 Comprehensive logging
-- 🔄 Graceful failure recovery
-- 🎯 Production-ready code quality
+- 🧵 Non-blocking threaded downloads (`QThread`)  
+- 🛡️ Robust error handling (private/unavailable videos skipped)  
+- 🔒 Thread-safe cleanup (no crashes)  
+- 🔄 Graceful recovery from rate limits and network errors 
 
 ## Installation
 
 ### Prerequisites
 - Windows 10/11
 - Python 3.8 or higher
-- ffmpeg (bundled in distribution)
+- ffmpeg in system PATH ([download here](https://ffmpeg.org))
+
+---
 
 ### Setup
 
@@ -62,7 +68,7 @@ python main.py
 
 1. **Enter URL**
    - Paste a YouTube video or playlist URL
-   - Application auto-detects the type
+   - Choose Single or Playlist
 
 2. **Select Format**
    - Choose MP3 (default) or M4A
@@ -73,7 +79,7 @@ python main.py
    - Watch progress in real-time
 
 4. **Edit Tags**
-   - Tag editor opens automatically after download
+   - Tag editor opens on click 
    - Edit: Artist, Title, Album, Track Number
    - Preview filename before saving
    - Optionally rename file
@@ -147,43 +153,6 @@ pyinstaller --windowed --onefile ^
 - ✅ Test single video download
 - ✅ Test playlist download
 - ✅ Test tag editing and renaming
-
-## Monetization
-
-### Google Ads Integration
-
-The application includes a dedicated advertisement space:
-- **Size**: 728x90 (Leaderboard) or 970x90 (Large Leaderboard)
-- **Location**: Top of window, full width
-- **Technology**: Qt WebEngine (Chromium-based)
-
-**To add your ads**:
-
-1. Edit `gui/main_window.py`
-2. Replace placeholder HTML in `create_ad_section()`
-3. Insert your Google AdSense code
-
-Example:
-```python
-ad_html = """
-<!DOCTYPE html>
-<html>
-<head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX"
-     crossorigin="anonymous"></script>
-</head>
-<body>
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:728px;height:90px"
-         data-ad-client="ca-pub-XXXXXXXX"
-         data-ad-slot="YYYYYYYYYY"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</body>
-</html>
-"""
-```
 
 ## Technical Details
 
