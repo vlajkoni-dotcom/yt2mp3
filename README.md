@@ -253,7 +253,12 @@ python main.py
 
 ## License
 
-This software is for personal use only. Respect copyright laws and terms of service of content platforms.
+MIT License
+Copyright © 2026 Vladimir Jevtić
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction...
+
+(Full license in LICENSE file)
 
 ## Disclaimer
 
@@ -275,6 +280,7 @@ For issues, questions, or feature requests:
 
 ---
 
+Created by Vladimir Jevtić © 2026
 **Version**: 1.0.0  
 **Platform**: Windows 10/11  
 **Python**: 3.8+
